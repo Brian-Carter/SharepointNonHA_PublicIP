@@ -112,7 +112,7 @@
         "artifactsBaseUrl": "",
         "description": "URL to acquire other templates"
       },
-      "defaultValue": "https://raw.githubusercontent.com/Brian-Carter/SharepointnonHA/master"
+      "defaultValue": "https://raw.githubusercontent.com/Brian-Carter/SharepointNonHA_PublicIP/master"
     },
     "spPublicIPNewOrExisting": {
       "type": "string",
