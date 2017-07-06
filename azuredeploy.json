@@ -129,7 +129,7 @@
       "type": "string",
       "defaultValue": "",
       "metadata": {  
-        "description": "Resource Group containing existing public IP for Sharepoint"        "-"
+        "description": "Resource Group containing existing public IP for Sharepoint" 
       }
     },
     "sppublicIPAddressName": {
