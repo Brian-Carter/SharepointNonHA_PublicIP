@@ -1,2 +1,2 @@
-# SharepointnonHA
-SharepointConfig-Non-Ha-no-DC
+# SharepointnonHA_PublicIP
+SharepointConfig-Non-Ha-no-DC with Public IP
