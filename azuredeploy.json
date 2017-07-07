@@ -120,7 +120,7 @@
       "allowedValues": [
         "new",
         "existing"
-        ],
+      ],
       "metadata": {
         "description": "Indicates whether the Sharepoint farm's IP is new or existing"
       }
@@ -128,13 +128,13 @@
     "spPublicIPRGName": {
       "type": "string",
       "defaultValue": "",
-      "metadata": {  
-        "description": "Resource Group containing existing public IP for Sharepoint" 
+      "metadata": {
+        "description": "Resource Group containing existing public IP for Sharepoint"
       }
     },
     "sppublicIPAddressName": {
       "type": "string",
-      "metadata": {  
+      "metadata": {
         "description": "Name of existing public IP resource for Sharepoint"
       }
     },
@@ -158,6 +158,18 @@
     },
     "ouPath": {
       "type": "string"
+    },
+    "virtualNetworkName": {
+      "type": "string"
+    },
+    "virtualNetworkResourceGroupName": {
+      "type": "string"
+    },
+    "sqlSubnetName": {
+      "type": "string"
+    },
+    "spSubnetName": {
+      "type": "string"
     }
   },
   "variables": {
@@ -172,15 +184,12 @@
     "RDPNAT": "RDP",
     "spWebNAT": "spWeb",
     "spCANAT": "spCentralAdmin",
-    "sqlSubnetName": "V-backend",
-    "spSubnetName": "v-backend",
     "sqlNicName": "sqlNic",
     "spNicName": "spNic",
-    "virtualNetworkResourceGroupName": "vnet",
-    "virtualNetworkName": "vnet",
-    "vnetID": "[resourceId(variables('virtualNetworkResourceGroupName'), 'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
-    "sqlSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('sqlSubnetName'))]",
-    "spSubnetRef": "[concat(variables('VnetID'),'/subnets/',variables('spSubnetName'))]",
+    "subnetRef": "[concat(variables('vnetId'), '/subnets/', parameters('sqlSubnetName'))]",
+    "vnetID": "[resourceId(parameters('virtualNetworkResourceGroupName'), 'Microsoft.Network/virtualNetworks', parameters('virtualNetworkName'))]",
+    "sqlSubnetRef": "[concat(variables('VnetID'),'/subnets/',parameters('sqlSubnetName'))]",
+    "spSubnetRef": "[concat(variables('VnetID'),'/subnets/',parameters('spSubnetName'))]",
     "sqlNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('sqlNicName'))]",
     "spNicId": "[resourceId('Microsoft.Network/networkInterfaces',variables('spNicName'))]",
     "sqlLBName": "sqlLoadBalancer",
